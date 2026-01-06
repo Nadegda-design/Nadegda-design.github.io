@@ -3374,9 +3374,10 @@ input, select, textarea {
 
 /* Увеличение логотипа */
 .logo img {
-  height: 75px;   /* было ~28px → стало в 2 раза больше */
+  height: 100px;   /* было ~28px → стало в 2 раза больше */
   width: auto;
 }
+
 
 
 
