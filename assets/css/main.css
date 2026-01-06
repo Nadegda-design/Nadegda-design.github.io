@@ -3485,7 +3485,7 @@ input, select, textarea {
 
 .about-photo{
   flex: 0 0 45%;
-  margin-top: 5.5rem;
+  margin-top: 8.5rem;
 }
 
 .about-photo img{
@@ -3507,6 +3507,7 @@ input, select, textarea {
     flex: 0 0 auto;
   }
 }
+
 
 
 
