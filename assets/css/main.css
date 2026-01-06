@@ -3447,6 +3447,25 @@ input, select, textarea {
   }
 }
 
+/* About section layout */
+.about-layout {
+  display: flex;
+  align-items: flex-start; /* 🔹 ВАЖНО: выравнивание по верху */
+  gap: 2.5rem;
+}
+
+.about-photo img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text {
+  flex: 1;
+}
+
+
 
 
 
