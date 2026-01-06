@@ -3378,6 +3378,22 @@ input, select, textarea {
   width: auto;
 }
 
+/* Контакты по центру на странице contact.html */
+.contact-icons--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-icons--center img {
+  width: 28px;
+  height: 28px;
+}
+
 
 
 
