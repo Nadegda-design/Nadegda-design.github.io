@@ -3407,10 +3407,13 @@ input, select, textarea {
 /* ===== About page layout ===== */
 
 .about-layout {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
+  display: flex;
   gap: 3em;
-  align-items: start;
+  align-items: flex-start;
+}
+
+.about-photo {
+  flex: 0 0 34%;
 }
 
 .about-photo img {
@@ -3419,8 +3422,18 @@ input, select, textarea {
   display: block;
 }
 
-.about-text h1 {
-  margin-top: 0;
+.about-text {
+  flex: 1;
+}
+
+@media screen and (max-width: 736px) {
+  .about-layout {
+    flex-direction: column;
+  }
+
+  .about-photo {
+    flex-basis: auto;
+  }
 }
 
 /* Адаптив для мобильных */
@@ -3433,6 +3446,7 @@ input, select, textarea {
     margin-bottom: 2em;
   }
 }
+
 
 
 
