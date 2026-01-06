@@ -3477,6 +3477,36 @@ input, select, textarea {
   margin-bottom: 0;
 }
 
+.about-layout{
+  display: flex !important;
+  gap: 3rem;
+  align-items: flex-start;
+}
+
+.about-photo{
+  flex: 0 0 38%;
+}
+
+.about-photo img{
+  width: 100%;
+  height: auto;
+  display: block;
+  max-width: none;
+}
+
+.about-text{
+  flex: 1;
+}
+
+@media screen and (max-width: 736px){
+  .about-layout{
+    flex-direction: column;
+  }
+  .about-photo{
+    flex: 0 0 auto;
+  }
+}
+
 
 
 
