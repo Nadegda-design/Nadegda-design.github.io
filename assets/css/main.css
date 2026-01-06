@@ -3450,7 +3450,7 @@ input, select, textarea {
 /* About section layout */
 .about-layout {
   display: flex;
-  align-items: flex-start; /* 🔹 ВАЖНО: выравнивание по верху */
+  align-items: flex-end; /* 🔹 выравнивание по нижнему краю */
   gap: 2.5rem;
 }
 
@@ -3464,6 +3464,7 @@ input, select, textarea {
 .about-text {
   flex: 1;
 }
+
 
 
 
