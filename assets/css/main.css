@@ -3372,3 +3372,7 @@ input, select, textarea {
   transform: scale(1.05);
 }
 
+.logo img {
+  height: 28px;   /* можно 24–32 */
+  width: auto;
+}
