@@ -5,6 +5,7 @@
 	Phantom by HTML5 UP
 	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
 */
 
 html, body, div, span, applet, object,
@@ -3327,3 +3328,25 @@ input, select, textarea {
 			}
 
 		}
+.contact-icons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-icons li {
+  margin-bottom: 0.9em;
+}
+
+.contact-icons a {
+  display: flex;
+  align-items: center;
+  gap: 0.75em;
+  text-decoration: none;
+  color: inherit;
+}
+
+.contact-icons img {
+  width: 22px;
+  height: 22px;
+}
