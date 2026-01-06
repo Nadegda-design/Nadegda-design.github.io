@@ -3404,6 +3404,36 @@ input, select, textarea {
   width: auto;
 }
 
+/* ===== About page layout ===== */
+
+.about-layout {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 3em;
+  align-items: start;
+}
+
+.about-photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.about-text h1 {
+  margin-top: 0;
+}
+
+/* Адаптив для мобильных */
+@media screen and (max-width: 736px) {
+  .about-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .about-photo {
+    margin-bottom: 2em;
+  }
+}
+
 
 
 
