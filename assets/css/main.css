@@ -3465,6 +3465,19 @@ input, select, textarea {
   flex: 1;
 }
 
+.about-layout {
+  display: flex;
+  gap: 2.5rem;
+  align-items: flex-end;
+}
+
+/* убираем лишний нижний отступ у последнего абзаца,
+   он мешает выравниванию по низу */
+.about-text p:last-child {
+  margin-bottom: 0;
+}
+
+
 
 
 
