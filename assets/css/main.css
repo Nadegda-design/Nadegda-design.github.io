@@ -3718,6 +3718,42 @@ input, select, textarea {
   right: -56px;
 }
 
+/* ===== Modal for Graphic Design ===== */
+.gd-modal{
+  position: fixed;
+  inset: 0;
+  display: none;
+  z-index: 99999;
+}
+
+.gd-modal.active{
+  display: block;
+}
+
+.gd-modal__backdrop{
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+}
+
+.gd-modal__content{
+  position: relative;
+  max-width: 1100px;
+  width: calc(100% - 40px);
+  max-height: calc(100% - 40px);
+  margin: 20px auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 14px;
+  overflow: auto;
+}
+
+.gd-modal__content img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
 
 
 
