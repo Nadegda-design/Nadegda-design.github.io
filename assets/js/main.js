@@ -185,6 +185,7 @@
 
 })(jQuery);
 
+// ===== GD modal gallery =====
 const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
 let currentIndex = 0;
 
@@ -192,80 +193,72 @@ const modal = document.getElementById('gdModal');
 const modalImg = document.getElementById('gdModalImg');
 const modalCaption = document.getElementById('gdModalCaption');
 
-function openModal(index){
-  const link = gdLinks[index];
-  modalImg.src = link.getAttribute('href');
-  modalCaption.textContent = link.dataset.title || '';
-  modal.classList.add('active');
-  document.body.classList.add('gd-modal-lock');
-  currentIndex = index;
-}
-
-gdLinks.forEach((link, index) => {
-  link.addEventListener('click', e => {
-    e.preventDefault();
-    openModal(index);
-  });
-});
-
-document.querySelector('.gd-prev').addEventListener('click', () => {
-  currentIndex = (currentIndex - 1 + gdLinks.length) % gdLinks.length;
-  openModal(currentIndex);
-});
-
-document.querySelector('.gd-next').addEventListener('click', () => {
-  currentIndex = (currentIndex + 1) % gdLinks.length;
-  openModal(currentIndex);
-});
-
-const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
-let currentIndex = 0;
-
-const modal = document.getElementById('gdModal');
-const modalImg = document.getElementById('gdModalImg');
-const modalCaption = document.getElementById('gdModalCaption');
-
-const prevBtn = document.querySelector('.gd-prev');
-const nextBtn = document.querySelector('.gd-next');
-
-function showByIndex(index) {
-  if (!gdLinks.length) return;
-
-  // зацикливаем
-  if (index < 0) index = gdLinks.length - 1;
-  if (index >= gdLinks.length) index = 0;
-
-  const link = gdLinks[index];
-  modalImg.src = link.getAttribute('href');
-  modalCaption.textContent = link.dataset.title || '';
-  currentIndex = index;
-}
+const btnClose = modal?.querySelector('.gd-modal__close');
+const btnPrev  = modal?.querySelector('.gd-prev');
+const btnNext  = modal?.querySelector('.gd-next');
+const backdrop = modal?.querySelector('.gd-modal__backdrop');
 
 function openModal(index) {
+  if (!gdLinks.length) return;
+
+  // зацикливание
+  currentIndex = (index + gdLinks.length) % gdLinks.length;
+
+  const link = gdLinks[currentIndex];
+  modalImg.src = link.getAttribute('href');
+  modalCaption.textContent = link.dataset.title || '';
+
   modal.classList.add('active');
   document.body.classList.add('gd-modal-lock');
-  showByIndex(index);
+  modal.setAttribute('aria-hidden', 'false');
 }
 
-// клики по миниатюрам
-gdLinks.forEach((link, index) => {
+function closeModal() {
+  modal.classList.remove('active');
+  document.body.classList.remove('gd-modal-lock');
+  modal.setAttribute('aria-hidden', 'true');
+
+  // необязательно, но аккуратно:
+  modalImg.src = '';
+  modalCaption.textContent = '';
+}
+
+function nextImg() { openModal(currentIndex + 1); }
+function prevImg() { openModal(currentIndex - 1); }
+
+// Открытие по клику на превью
+gdLinks.forEach((link, i) => {
   link.addEventListener('click', (e) => {
     e.preventDefault();
-    openModal(index);
+    openModal(i);
   });
 });
 
-// стрелки
-if (prevBtn) {
-  prevBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showByIndex(currentIndex - 1);
-  });
-}
+// Кнопки
+btnNext?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  nextImg();
+});
 
-if (nextBtn) {
-  nextBtn.addEventListener('click', (e) => {
-    e.preventDefault();
-    showByIndex(currentIndex + 1);
-  });
-}
+btnPrev?.addEventListener('click', (e) => {
+  e.preventDefault();
+  e.stopPropagation();
+  prevImg();
+});
+
+btnClose?.addEventListener('click', (e) => {
+  e.preventDefault();
+  closeModal();
+});
+
+backdrop?.addEventListener('click', closeModal);
+
+// Клавиатура (стрелки + Esc)
+document.addEventListener('keydown', (e) => {
+  if (!modal.classList.contains('active')) return;
+
+  if (e.key === 'Escape') closeModal();
+  if (e.key === 'ArrowRight') nextImg();
+  if (e.key === 'ArrowLeft') prevImg();
+});
