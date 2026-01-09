@@ -3570,6 +3570,48 @@ input, select, textarea {
   }
 }
 
+.gd-modal { display: none; }
+.gd-modal.is-open { display: block; }
+
+.gd-modal__backdrop{
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,0.7);
+  z-index: 9998;
+}
+
+.gd-modal__content{
+  position: fixed;
+  z-index: 9999;
+  left: 50%; top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(920px, calc(100% - 2rem));
+  max-height: calc(100% - 2rem);
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  overflow: auto;
+}
+
+.gd-modal__content img{
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 10px;
+}
+
+.gd-modal__close{
+  position: absolute;
+  right: 0.6rem;
+  top: 0.35rem;
+  border: 0;
+  background: transparent;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.gd-modal-lock{ overflow: hidden; }
+
+
 
 
 
