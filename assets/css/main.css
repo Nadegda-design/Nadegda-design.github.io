@@ -3529,6 +3529,7 @@ input, select, textarea {
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 6px;
+  position: relative;   /* ВАЖНО */
 }
 
 .gd-item img {
@@ -3641,6 +3642,7 @@ input, select, textarea {
   background: rgba(0,0,0,0.15);
   opacity: 0;
   transition: opacity 0.3s ease;
+  pointer-events: none;  /* ВАЖНО */
 }
 
 .gd-item a:hover::after {
@@ -3648,6 +3650,7 @@ input, select, textarea {
 }
 
 .gd-modal-lock{ overflow: hidden; }
+
 
 
 
