@@ -3624,7 +3624,31 @@ input, select, textarea {
   object-fit: contain;
 }
 
+#gdModalCaption {
+  margin-top: 0.8rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.gd-item a {
+  cursor: zoom-in;
+}
+
+.gd-item a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.gd-item a:hover::after {
+  opacity: 1;
+}
+
 .gd-modal-lock{ overflow: hidden; }
+
 
 
 
