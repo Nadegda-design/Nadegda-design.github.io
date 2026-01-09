@@ -52,7 +52,7 @@
                 <section class="gd-grid">
 
                   <article class="gd-item">
-                    <a href="images/graphic-01.jpg" target="_blank" rel="noopener">
+                    <a href="images/graphic-01.jpg" class="gd-open" data-title="Сертификат и скидочный купон">
                       <img src="images/graphic-01.jpg" alt="Сертификат и скидочный купон">
                     </a>
                     <h3>Сертификат и скидочный купон</h3>
@@ -60,7 +60,7 @@
                   </article>
 
                   <article class="gd-item">
-                    <a href="images/graphic-02.jpg" target="_blank" rel="noopener">
+                    <a href="images/graphic-02.jpg" class="gd-open" data-title="Сертификат и скидочный купон">
                       <img src="images/graphic-02.jpg" alt="Работа 2">
                     </a>
                     <h3>Работа 2</h3>
@@ -68,7 +68,7 @@
                   </article>
 
                   <article class="gd-item">
-                    <a href="images/graphic-03.jpg" target="_blank" rel="noopener">
+                    <a href="images/graphic-03.jpg" class="gd-open" data-title="Сертификат и скидочный купон">
                       <img src="images/graphic-03.jpg" alt="Работа 3">
                     </a>
                     <h3>Работа 3</h3>
@@ -129,7 +129,61 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-	</body>
+	<!-- Modal -->
+<div id="gdModal" class="gd-modal" aria-hidden="true">
+  <div class="gd-modal__backdrop" data-close="1"></div>
+
+  <div class="gd-modal__content" role="dialog" aria-modal="true">
+    <button class="gd-modal__close" type="button" aria-label="Закрыть">×</button>
+    <img id="gdModalImg" src="" alt="">
+    <p id="gdModalCaption"></p>
+  </div>
+</div>
+
+<script>
+  (function () {
+    const modal = document.getElementById('gdModal');
+    const modalImg = document.getElementById('gdModalImg');
+    const caption = document.getElementById('gdModalCaption');
+    const closeBtn = modal.querySelector('.gd-modal__close');
+    const backdrop = modal.querySelector('.gd-modal__backdrop');
+
+    function openModal(src, title, alt) {
+      modalImg.src = src;
+      modalImg.alt = alt || title || 'Работа';
+      caption.textContent = title || '';
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('gd-modal-lock');
+    }
+
+    function closeModal() {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      modalImg.src = '';
+      caption.textContent = '';
+      document.body.classList.remove('gd-modal-lock');
+    }
+
+    document.addEventListener('click', (e) => {
+      const link = e.target.closest('.gd-open');
+      if (link) {
+        e.preventDefault();
+        const img = link.querySelector('img');
+        openModal(link.getAttribute('href'), link.dataset.title, img ? img.alt : '');
+      }
+      if (e.target.closest('[data-close="1"]')) closeModal();
+    });
+
+    closeBtn.addEventListener('click', closeModal);
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  })();
+</script>
+					
+</body>
 
 </html>
 
