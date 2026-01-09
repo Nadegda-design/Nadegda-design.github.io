@@ -3541,35 +3541,58 @@ input, select, textarea {
 
 .gd-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2.5rem;
-  margin-top: 2rem;
+  margin-top: 2.5rem;
+}
+
+/* Карточка */
+.gd-item {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Превью */
+.gd-item a {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  border-radius: 6px;
 }
 
 .gd-item img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  transition: transform 0.4s ease;
 }
 
+/* Hover — лёгкий зум */
+.gd-item a:hover img {
+  transform: scale(1.05);
+}
+
+/* Заголовок */
 .gd-item h3 {
   margin: 0.9rem 0 0.4rem;
 }
 
+/* Описание */
 .gd-item p {
   margin: 0;
   font-size: 0.9rem;
-  opacity: 0.8;
+  line-height: 1.5;
+  color: #777;
 }
 
-/* Планшет */
+/* ===== Mobile ===== */
 @media screen and (max-width: 980px) {
   .gd-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Телефон */
 @media screen and (max-width: 736px) {
   .gd-grid {
     grid-template-columns: 1fr;
