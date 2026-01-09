@@ -3537,6 +3537,38 @@ input, select, textarea {
   }
 }
 
+/* ===== Graphic Design grid ===== */
+
+.gd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5em;
+  margin-top: 2rem;
+}
+
+.gd-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gd-item h3 {
+  margin: 0.9rem 0 0.4rem;
+}
+
+.gd-item p {
+  margin: 0;
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+/* Mobile */
+@media screen and (max-width: 736px) {
+  .gd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 
 
 
