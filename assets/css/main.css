@@ -3625,6 +3625,15 @@ input, select, textarea {
   cursor: pointer;
   opacity: 0.7;
   transition: opacity 0.25s ease;
+
+  outline: none;
+  box-shadow: none;
+}
+
+.gd-modal__close:focus,
+.gd-modal__close:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .gd-modal__close:hover {
@@ -3677,10 +3686,21 @@ input, select, textarea {
   cursor: pointer;
   opacity: 0.6;
   transition: opacity 0.25s ease;
+
+  outline: none;
+  box-shadow: none;
+  border: none;
+  background: none;
 }
 
 .gd-modal__nav:hover {
   opacity: 1;
+}
+
+.gd-modal__nav:focus,
+.gd-modal__nav:active {
+  outline: none;
+  box-shadow: none;
 }
 
 .gd-prev {
@@ -3690,6 +3710,7 @@ input, select, textarea {
 .gd-next {
   right: 16px;
 }
+
 
 
 
