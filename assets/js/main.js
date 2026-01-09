@@ -185,80 +185,78 @@
 
 })(jQuery);
 
-// ===== GD modal gallery =====
-const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
-let currentIndex = 0;
-
-const modal = document.getElementById('gdModal');
-const modalImg = document.getElementById('gdModalImg');
-const modalCaption = document.getElementById('gdModalCaption');
-
-const btnClose = modal?.querySelector('.gd-modal__close');
-const btnPrev  = modal?.querySelector('.gd-prev');
-const btnNext  = modal?.querySelector('.gd-next');
-const backdrop = modal?.querySelector('.gd-modal__backdrop');
-
-function openModal(index) {
+document.addEventListener('DOMContentLoaded', () => {
+  const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
   if (!gdLinks.length) return;
 
-  // зацикливание
-  currentIndex = (index + gdLinks.length) % gdLinks.length;
+  let currentIndex = 0;
 
-  const link = gdLinks[currentIndex];
-  modalImg.src = link.getAttribute('href');
-  modalCaption.textContent = link.dataset.title || '';
+  const modal = document.getElementById('gdModal');
+  const modalImg = document.getElementById('gdModalImg');
+  const modalCaption = document.getElementById('gdModalCaption');
 
-  modal.classList.add('active');
-  document.body.classList.add('gd-modal-lock');
-  modal.setAttribute('aria-hidden', 'false');
-}
+  const btnClose = modal.querySelector('.gd-modal__close');
+  const btnPrev = modal.querySelector('.gd-prev');
+  const btnNext = modal.querySelector('.gd-next');
+  const backdrop = modal.querySelector('.gd-modal__backdrop');
 
-function closeModal() {
-  modal.classList.remove('active');
-  document.body.classList.remove('gd-modal-lock');
-  modal.setAttribute('aria-hidden', 'true');
+  function openModal(index) {
+    currentIndex = index;
 
-  // необязательно, но аккуратно:
-  modalImg.src = '';
-  modalCaption.textContent = '';
-}
+    const link = gdLinks[currentIndex];
+    modalImg.src = link.getAttribute('href');
+    modalImg.alt = link.dataset.title || '';
+    modalCaption.textContent = link.dataset.title || '';
 
-function nextImg() { openModal(currentIndex + 1); }
-function prevImg() { openModal(currentIndex - 1); }
+    modal.classList.add('active');
+    document.body.classList.add('gd-modal-lock');
+  }
 
-// Открытие по клику на превью
-gdLinks.forEach((link, i) => {
-  link.addEventListener('click', (e) => {
-    e.preventDefault();
-    openModal(i);
+  function closeModal() {
+    modal.classList.remove('active');
+    document.body.classList.remove('gd-modal-lock');
+  }
+
+  function showNext() {
+    currentIndex = (currentIndex + 1) % gdLinks.length;
+    openModal(currentIndex);
+  }
+
+  function showPrev() {
+    currentIndex = (currentIndex - 1 + gdLinks.length) % gdLinks.length;
+    openModal(currentIndex);
+  }
+
+  // Открытие по клику на карточку
+  gdLinks.forEach((link, index) => {
+    link.addEventListener('click', (e) => {
+      e.preventDefault();
+      openModal(index);
+    });
   });
-});
 
-// Кнопки
-btnNext?.addEventListener('click', (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  nextImg();
-});
+  // Кнопки
+  btnClose.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
 
-btnPrev?.addEventListener('click', (e) => {
-  e.preventDefault();
-  e.stopPropagation();
-  prevImg();
-});
+  btnNext.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    showNext();
+  });
 
-btnClose?.addEventListener('click', (e) => {
-  e.preventDefault();
-  closeModal();
-});
+  btnPrev.addEventListener('click', (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    showPrev();
+  });
 
-backdrop?.addEventListener('click', closeModal);
+  // Клавиатура (Esc, стрелки)
+  document.addEventListener('keydown', (e) => {
+    if (!modal.classList.contains('active')) return;
 
-// Клавиатура (стрелки + Esc)
-document.addEventListener('keydown', (e) => {
-  if (!modal.classList.contains('active')) return;
-
-  if (e.key === 'Escape') closeModal();
-  if (e.key === 'ArrowRight') nextImg();
-  if (e.key === 'ArrowLeft') prevImg();
+    if (e.key === 'Escape') closeModal();
+    if (e.key === 'ArrowRight') showNext();
+    if (e.key === 'ArrowLeft') showPrev();
+  });
 });
