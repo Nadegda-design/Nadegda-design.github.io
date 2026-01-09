@@ -3580,14 +3580,14 @@ input, select, textarea {
 .gd-modal { display: none; }
 .gd-modal.is-open { display: block; }
 
-.gd-modal__backdrop{
-  position: fixed; inset: 0;
-  background: rgba(0,0,0,0.7);
-  z-index: 9998;
+.gd-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
 }
 
 .gd-modal__content{
-  position: fixed;
+  position: relative;
   z-index: 9999;
   left: 50%; top: 50%;
   transform: translate(-50%, -50%);
@@ -3613,6 +3613,10 @@ input, select, textarea {
 
   width: 32px;
   height: 32px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
   background: none;
   border: none;
@@ -3676,6 +3680,9 @@ input, select, textarea {
   top: 50%;
   transform: translateY(-50%);
 
+  width: 42px;
+  height: 42px;
+
   background: none;
   border: none;
   padding: 0;
@@ -3704,12 +3711,13 @@ input, select, textarea {
 }
 
 .gd-prev {
-  left: 16px;
+  left: -56px;
 }
 
 .gd-next {
-  right: 16px;
+  right: -56px;
 }
+
 
 
 
