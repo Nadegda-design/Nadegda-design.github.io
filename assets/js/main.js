@@ -217,3 +217,55 @@ document.querySelector('.gd-next').addEventListener('click', () => {
   currentIndex = (currentIndex + 1) % gdLinks.length;
   openModal(currentIndex);
 });
+
+const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
+let currentIndex = 0;
+
+const modal = document.getElementById('gdModal');
+const modalImg = document.getElementById('gdModalImg');
+const modalCaption = document.getElementById('gdModalCaption');
+
+const prevBtn = document.querySelector('.gd-prev');
+const nextBtn = document.querySelector('.gd-next');
+
+function showByIndex(index) {
+  if (!gdLinks.length) return;
+
+  // зацикливаем
+  if (index < 0) index = gdLinks.length - 1;
+  if (index >= gdLinks.length) index = 0;
+
+  const link = gdLinks[index];
+  modalImg.src = link.getAttribute('href');
+  modalCaption.textContent = link.dataset.title || '';
+  currentIndex = index;
+}
+
+function openModal(index) {
+  modal.classList.add('active');
+  document.body.classList.add('gd-modal-lock');
+  showByIndex(index);
+}
+
+// клики по миниатюрам
+gdLinks.forEach((link, index) => {
+  link.addEventListener('click', (e) => {
+    e.preventDefault();
+    openModal(index);
+  });
+});
+
+// стрелки
+if (prevBtn) {
+  prevBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    showByIndex(currentIndex - 1);
+  });
+}
+
+if (nextBtn) {
+  nextBtn.addEventListener('click', (e) => {
+    e.preventDefault();
+    showByIndex(currentIndex + 1);
+  });
+}
