@@ -3537,12 +3537,12 @@ input, select, textarea {
   }
 }
 
-/* ===== Graphic Design grid ===== */
+/* ===== Graphic Design grid (3 columns) ===== */
 
 .gd-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5em;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2.5rem;
   margin-top: 2rem;
 }
 
@@ -3558,11 +3558,18 @@ input, select, textarea {
 
 .gd-item p {
   margin: 0;
-  font-size: 0.9em;
+  font-size: 0.9rem;
   opacity: 0.8;
 }
 
-/* Mobile */
+/* Планшет */
+@media screen and (max-width: 980px) {
+  .gd-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Телефон */
 @media screen and (max-width: 736px) {
   .gd-grid {
     grid-template-columns: 1fr;
