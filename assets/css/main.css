@@ -3508,6 +3508,36 @@ input, select, textarea {
   }
 }
 
+/* ===== Graphic Design grid (2 columns) ===== */
+.gd-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+.gd-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.gd-item h3 {
+  margin: 0.9rem 0 0.4rem 0;
+}
+
+.gd-item p {
+  margin: 0;
+}
+
+/* Mobile */
+@media screen and (max-width: 736px) {
+  .gd-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+
 
 
 
