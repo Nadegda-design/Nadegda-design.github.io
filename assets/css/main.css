@@ -3547,13 +3547,19 @@ input, select, textarea {
 
 /* Заголовок */
 .gd-item h3 {
-  margin: 0.9rem 0 0.4rem;
+  margin: 0.9rem 0 0.35rem;
+  text-align: left;
+  font-size: 0.95rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #444;
 }
 
 /* Описание */
 .gd-item p {
   margin: 0;
-  font-size: 0.9rem;
+  text-align: left;
+  font-size: 0.85rem;
   line-height: 1.5;
   color: #777;
 }
@@ -3650,6 +3656,7 @@ input, select, textarea {
 }
 
 .gd-modal-lock{ overflow: hidden; }
+
 
 
 
