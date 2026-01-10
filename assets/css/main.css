@@ -3710,13 +3710,8 @@ input, select, textarea {
   box-shadow: none;
 }
 
-.gd-prev {
-  left: -56px;
-}
-
-.gd-next {
-  right: -56px;
-}
+.gd-prev { left: 8px; }
+.gd-next { right: 8px; }
 
 /* ===== Modal for Graphic Design ===== */
 .gd-modal{
