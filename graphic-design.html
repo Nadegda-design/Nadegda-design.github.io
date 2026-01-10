@@ -152,11 +152,22 @@
     const caption = document.getElementById('gdModalCaption');
     const closeBtn = modal.querySelector('.gd-modal__close');
     const backdrop = modal.querySelector('.gd-modal__backdrop');
+	const gdLinks = Array.from(document.querySelectorAll('.gd-open'));
+    let currentIndex = 0;
 
-    function openModal(src, title, alt) {
-      modalImg.src = src;
-      modalImg.alt = alt || title || 'Работа';
-      caption.textContent = title || '';
+	function openModal(index) {
+      currentIndex = index;
+
+      const link = gdLinks[currentIndex];
+
+      modalImg.src = link.getAttribute('href');
+      modalImg.alt = link.dataset.title || '';
+
+      const title = link.dataset.title || '';
+      const description = link.dataset.description || '';
+
+      caption.innerHTML = `<strong>${title}</strong><br>${description}`;
+
       modal.classList.add('is-open');
       modal.setAttribute('aria-hidden', 'false');
       document.body.classList.add('gd-modal-lock');
@@ -175,7 +186,8 @@
       if (link) {
         e.preventDefault();
         const img = link.querySelector('img');
-        openModal(link.getAttribute('href'), link.dataset.title, img ? img.alt : '');
+        const index = gdLinks.indexOf(link);
+        openModal(index);
       }
       if (e.target.closest('[data-close="1"]')) closeModal();
     });
