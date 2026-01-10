@@ -3699,8 +3699,8 @@ input, select, textarea {
   align-items: center;
   justify-content: center;
 
-  background: transparent;
-  border: 0;
+  background: none;
+  border: none;
   padding: 0;
   margin: 0;
 
@@ -3728,20 +3728,20 @@ input, select, textarea {
   top: 50%;
   transform: translateY(-50%);
 
-  width: 44px;
-  height: 44px;
+  width: auto;
+  height: auto;
 
   display: flex;
   align-items: center;
   justify-content: center;
 
-  background: transparent;
-  border: 0;
+  background: none;
+  border: none;
   padding: 0;
   margin: 0;
 
   color: #fff;
-  font-size: 44px;
+  font-size: 42px;
   line-height: 1;
 
   cursor: pointer;
@@ -3751,19 +3751,22 @@ input, select, textarea {
   box-shadow: none;
 
   user-select: none;
-  -webkit-tap-highlight-color: transparent;
 }
 
-.gd-modal__nav:hover { opacity: 1; }
+.gd-modal__nav:hover {
+  opacity: 1;
+}
+
 .gd-modal__nav:focus,
-.gd-modal__nav:active{
+.gd-modal__nav:active {
   outline: none;
   box-shadow: none;
 }
 
 /* Прижимаем стрелки к краям модалки (внутри белой рамки) */
-.gd-prev { left: 10px; }
-.gd-next { right: 10px; }
+.gd-prev { left: 24px; }
+.gd-next { right: 24px; }
+
 
 
 
