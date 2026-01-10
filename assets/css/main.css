@@ -3667,12 +3667,11 @@ input, select, textarea {
 
 /* Картинка внутри модалки */
 .gd-modal__content img {
-  width: 100%;
-  height: auto;
+  display: block;
+  margin: 0 auto;      /* центр картинки */
+  max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
-  display: block;
-  border-radius: 10px;
 }
 
 /* Подпись */
@@ -3734,6 +3733,8 @@ input, select, textarea {
 
   outline: none;
   box-shadow: none;
+
+  z-index: 10;
 }
 
 .gd-modal__nav:hover {
@@ -3741,11 +3742,11 @@ input, select, textarea {
 }
 
 .gd-prev {
-  left: 12px;
+  left: 24px;
 }
 
 .gd-next {
-  right: 12px;
+  right: 24px;
 }
 
 
