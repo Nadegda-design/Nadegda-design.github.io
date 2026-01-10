@@ -3764,8 +3764,9 @@ input, select, textarea {
 }
 
 /* Прижимаем стрелки к краям модалки (внутри белой рамки) */
-.gd-prev { left: 24px; }
+.gd-prev { left: 32px; }
 .gd-next { right: 24px; }
+
 
 
 
