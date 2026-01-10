@@ -206,8 +206,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const link = gdLinks[currentIndex];
     modalImg.src = link.getAttribute('href');
     modalImg.alt = link.dataset.title || '';
-    modalCaption.textContent = link.dataset.title || '';
-
+    modalCaption.innerHTML = `
+      <strong>${link.dataset.title || ''}</strong><br>
+      ${link.dataset.description || ''}
+    `;
+	  
     modal.classList.add('active');
     document.body.classList.add('gd-modal-lock');
   }
@@ -260,3 +263,4 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowLeft') showPrev();
   });
 });
+
