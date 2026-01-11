@@ -197,11 +197,11 @@ input, select, textarea {
 		}
 
 	h2, h3, h4, h5, h6 {
-		font-weight: 900;
-		line-height: 1.5;
+		font-weight: 700;
+		line-height: 1.3;
 		margin: 0 0 2em 0;
 		text-transform: uppercase;
-		letter-spacing: 0.35em;
+		letter-spacing: 0.02em;
 	}
 
 		h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -3766,6 +3766,7 @@ input, select, textarea {
 /* Прижимаем стрелки к краям модалки (внутри белой рамки) */
 .gd-prev { left: 32px; }
 .gd-next { right: 24px; }
+
 
 
 
