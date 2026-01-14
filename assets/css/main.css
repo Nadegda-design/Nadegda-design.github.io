@@ -3328,6 +3328,11 @@ input, select, textarea {
 			}
 
 		}
+
+/* =========================
+   Контакты (иконки)
+   ========================= */
+
 .contact-icons {
   list-style: none;
   padding: 0;
@@ -3351,9 +3356,30 @@ input, select, textarea {
   height: 22px;
 }
 
+/* Контакты по центру на странице contact.html */
+.contact-icons--center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2em;
+  margin: 2em 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-icons--center img {
+  width: 28px;
+  height: 28px;
+}
+
 /* =========================
-   Hover для карточек работ
+   Hover для карточек работ (tiles)
    ========================= */
+
+/* исправление опечатки: postiion -> position */
+.tiles {
+  position: relative;
+}
 
 .tiles article {
   transition: transform 0.25s ease, box-shadow 0.25s ease;
@@ -3372,143 +3398,22 @@ input, select, textarea {
   transform: scale(1.05);
 }
 
-/* Увеличение логотипа */
-.logo img {
-  height: 100px;   /* было ~28px → стало в 2 раза больше */
-  width: auto;
-}
+/* =========================
+   Логотип (если используешь)
+   ========================= */
 
-/* Контакты по центру на странице contact.html */
-.contact-icons--center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 2em;
-  margin: 2em 0 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.contact-icons--center img {
-  width: 28px;
-  height: 28px;
-}
-
-/* Логотип слева сверху */
 #header .logo {
   margin-right: auto;
 }
 
 #header .logo img {
-  height: 56px; /* размер логотипа, можно 48–64 */
+  height: 56px;
   width: auto;
 }
 
-/* ===== About page layout ===== */
-
-.about-layout {
-  display: flex;
-  gap: 3em;
-  align-items: flex-start;
-}
-
-.about-photo {
-  flex: 0 0 34%;
-}
-
-.about-photo img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.about-text {
-  flex: 1;
-}
-
-@media screen and (max-width: 736px) {
-  .about-layout {
-    flex-direction: column;
-  }
-
-  .about-photo {
-    flex-basis: auto;
-  }
-}
-
-/* Адаптив для мобильных */
-@media screen and (max-width: 736px) {
-  .about-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .about-photo {
-    margin-bottom: 2em;
-  }
-}
-
-/* About section layout */
-.about-layout {
-  display: flex;
-  align-items: flex-end; /* 🔹 выравнивание по нижнему краю */
-  gap: 2.5rem;
-}
-
-.about-photo img {
-  max-width: 320px;
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.about-text {
-  flex: 1;
-}
-
-.about-layout {
-  display: flex;
-  gap: 2.5rem;
-  align-items: flex-end;
-}
-
-/* убираем лишний нижний отступ у последнего абзаца,
-   он мешает выравниванию по низу */
-.about-text p:last-child {
-  margin-bottom: 0;
-}
-
-.about-layout{
-  display: flex !important;
-  gap: 3rem;
-  align-items: flex-start;
-}
-
-.about-photo{
-  flex: 0 0 45%;
-  margin-top: 9.5rem;
-}
-
-.about-photo img{
-  width: 100%;
-  height: auto;
-  display: block;
-  max-width: none;
-}
-
-.about-text{
-  flex: 1;
-}
-
-@media screen and (max-width: 736px){
-  .about-layout{
-    flex-direction: column;
-  }
-  .about-photo{
-    flex: 0 0 auto;
-  }
-}
-
-/* ===== Graphic Design grid (3 columns) ===== */
+/* =========================
+   Graphic Design grid
+   ========================= */
 
 .gd-grid {
   display: grid;
@@ -3523,13 +3428,14 @@ input, select, textarea {
   flex-direction: column;
 }
 
-/* Превью */
+/* Превью-область */
 .gd-item a {
   display: block;
   aspect-ratio: 4 / 3;
   overflow: hidden;
   border-radius: 6px;
-  position: relative;   /* ВАЖНО */
+  position: relative;
+  cursor: zoom-in;
 }
 
 .gd-item img {
@@ -3540,7 +3446,6 @@ input, select, textarea {
   transition: transform 0.4s ease;
 }
 
-/* Hover — лёгкий зум */
 .gd-item a:hover img {
   transform: scale(1.05);
 }
@@ -3564,72 +3469,17 @@ input, select, textarea {
   color: #777;
 }
 
-/* ===== Mobile ===== */
-
+/* Адаптив */
 @media screen and (max-width: 980px) {
-  .gd-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .gd-grid { grid-template-columns: repeat(2, 1fr); }
 }
-
 @media screen and (max-width: 736px) {
-  .gd-grid {
-    grid-template-columns: 1fr;
-  }
+  .gd-grid { grid-template-columns: 1fr; }
 }
 
-/* ===== Graphic Design grid (3 columns) ===== */
-
-.gd-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2.5rem;
-  margin-top: 2.5rem;
-}
-
-/* Карточка */
-.gd-item {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Превью-область (кликабельная) */
-.gd-item a {
-  display: block;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  border-radius: 6px;
-  position: relative;
-  cursor: zoom-in;
-}
-
-/* Картинка в превью */
-.gd-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.gd-item a:hover img {
-  transform: scale(1.05);
-}
-
-/* Заголовок / описание под карточкой — НЕ трогаем текст, только выравнивание */
-.gd-item h3 {
-  margin: 0.9rem 0 0.4rem 0;
-  text-align: left;
-}
-
-.gd-item p {
-  margin: 0;
-  font-size: 0.9rem;
-  line-height: 1.5;
-  text-align: left;
-}
-
-/* ===== Modal (Graphic Design) ===== */
+/* =========================
+   Modal (Graphic Design)
+   ========================= */
 
 .gd-modal {
   position: fixed;
@@ -3651,7 +3501,6 @@ input, select, textarea {
   background: rgba(0, 0, 0, 0.6);
 }
 
-/* Контейнер модалки — строго по центру */
 .gd-modal__content {
   position: relative;
   z-index: 1;
@@ -3665,29 +3514,23 @@ input, select, textarea {
   overflow: auto;
 }
 
-/* Картинка внутри модалки */
 .gd-modal__content img {
   display: block;
-  margin: 0 auto;      /* центр картинки */
+  margin: 0 auto;
   max-width: 100%;
   max-height: 80vh;
   object-fit: contain;
 }
 
-/* Подпись */
 #gdModalCaption {
   margin-top: 0.8rem;
   font-size: 0.95rem;
   color: #555;
 }
 
-/* Запрет прокрутки страницы, когда модалка открыта */
-.gd-modal-lock {
-  overflow: hidden;
-}
+.gd-modal-lock { overflow: hidden; }
 
-/* Кнопка закрыть */
-.gd-modal__close{
+.gd-modal__close {
   position: absolute;
   top: 14px;
   right: 14px;
@@ -3717,23 +3560,13 @@ input, select, textarea {
 
 .gd-modal__close:hover { opacity: 1; }
 .gd-modal__close:focus,
-.gd-modal__close:active {
-  outline: none;
-  box-shadow: none;
-}
+.gd-modal__close:active { outline: none; box-shadow: none; }
 
 /* Стрелки */
-.gd-modal__nav{
+.gd-modal__nav {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-
-  width: auto;
-  height: auto;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 
   background: none;
   border: none;
@@ -3753,119 +3586,84 @@ input, select, textarea {
   user-select: none;
 }
 
-.gd-modal__nav:hover {
-  opacity: 1;
-}
-
+.gd-modal__nav:hover { opacity: 1; }
 .gd-modal__nav:focus,
-.gd-modal__nav:active {
-  outline: none;
-  box-shadow: none;
-}
+.gd-modal__nav:active { outline: none; box-shadow: none; }
 
-/* Прижимаем стрелки к краям модалки (внутри белой рамки) */
 .gd-prev { left: 32px; }
 .gd-next { right: 24px; }
 
-/* ===== Top menu above H1 ===== */
-.page-top-nav{
+/* =========================
+   Верхнее меню над H1
+   ========================= */
+
+.page-top-nav {
   display: flex;
-  justify-content: center;  /* меню по центру */
-  gap: 48px;                /* расстояние между пунктами */
-  flex-wrap: wrap;          /* чтобы на мобильном переносилось */
-  margin: 0 0 22px 0;       /* отступ снизу до заголовка */
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 24px 0;
+  flex-wrap: wrap;
 }
 
-.page-top-nav a{
+.page-top-nav .nav-home {
+  margin-right: auto;
   text-decoration: none;
-  border-bottom: 2px solid transparent; /* аккуратное подчёркивание */
+  border-bottom: 2px solid transparent;
+  padding: 6px 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.page-top-nav .nav-links {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.page-top-nav a {
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
   padding: 6px 0;
   font-weight: 600;
   letter-spacing: 0.02em;
   color: inherit;
 }
 
-.page-top-nav a:hover{
+.page-top-nav a:hover {
   border-bottom-color: rgba(0,0,0,0.25);
 }
 
-.page-top-nav a.is-active{
+.page-top-nav a.is-active {
   border-bottom-color: rgba(0,0,0,0.55);
 }
 
-.page-top-nav{
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin: 0 0 24px 0; /* отступ до h1 */
-}
-
-.page-top-nav .nav-home{
-  margin-right: auto; /* прижимает "Главная" влево */
-  text-decoration: none;
-}
-
-.page-top-nav .nav-links{
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-}
-
-.page-top-nav a{
-  text-decoration: none;
-}
-
-/* Mobile */
-@media screen and (max-width: 736px){
-  .page-top-nav{
+@media screen and (max-width: 736px) {
+  .page-top-nav {
     gap: 18px;
-    justify-content: flex-start; /* на мобилке можно слева */
+    justify-content: flex-start;
   }
 }
 
-/* Убираем бургер-меню на всех страницах */
-#menuToggle,
-#menu,
-.menu,
-.hamburger,
-.toggle {
+/* =========================
+   Убираем бургер-меню (твой старый #menu)
+   ========================= */
+
+/* прячем кнопку-бургер в шапке */
+#header nav a[href="#menu"] {
   display: none !important;
 }
 
-/* ===== About page alignment fix ===== */
-
-/* Весь контент страницы "Обо мне" */
-body.page-generic #main .inner,
-body.page-generic header,
-body.page-generic h1,
-body.page-generic p {
-  text-align: left;
+/* сам выезжающий menu тоже прячем */
+#menu {
+  display: none !important;
 }
 
-/* Блок с фото + текстом */
-body.page-generic .about {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;
-}
+/* =========================
+   ОБО МНЕ (generic.html) — главное исправление
+   ========================= */
 
-/* Фото слева */
-body.page-generic .about .image {
-  flex: 0 0 320px;
-  margin-top: 5.2rem !important;
-}
-
-/* Текст справа */
-body.page-generic .about p {
-  max-width: 640px;
-}
-
-/* Заголовок */
-body.page-generic h1 {
-  margin-bottom: 2rem;
-}
-
-/* ===== ОБО МНЕ: отключаем колоноки (исправление) ===== */
+/* Убираем "колонки" (если где-то включились) */
 body.page-generic #main,
 body.page-generic #main .inner,
 body.page-generic #main .inner > *,
@@ -3877,6 +3675,50 @@ body.page-generic p {
   columns: auto !important;
   column-width: auto !important;
   column-gap: 0 !important;
+}
+
+/* Всё выравниваем по левому краю */
+body.page-generic #main .inner,
+body.page-generic header,
+body.page-generic h1,
+body.page-generic p {
+  text-align: left;
+}
+
+/* Блок фото+текст (у тебя <section class="about"> и <span class="image left">) */
+body.page-generic .about {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* Фото слева */
+body.page-generic .about .image.left {
+  flex: 0 0 320px;
+  margin-top: 5.2rem !important;  /* ← МЕНЯЙ ЭТО ЗНАЧЕНИЕ */
+  top: auto;                      /* важно: отключаем старый top: 0.25em */
+}
+
+/* Текст справа — ограничение ширины */
+body.page-generic .about p {
+  max-width: 640px;
+}
+
+/* Заголовок */
+body.page-generic h1 {
+  margin-bottom: 2rem;
+}
+
+/* На мобилке — колонкой */
+@media screen and (max-width: 736px) {
+  body.page-generic .about {
+    flex-direction: column;
+  }
+
+  body.page-generic .about .image.left {
+    flex: 0 0 auto;
+    margin-top: 0 !important;
+  }
 }
 
 
