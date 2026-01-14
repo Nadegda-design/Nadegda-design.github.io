@@ -3872,6 +3872,11 @@ body.page-generic #main .inner {
   column-gap: 0 !important;
 }
 
+body.page-generic {
+  outline: 8px solid red;
+}
+
+
 
 
 
