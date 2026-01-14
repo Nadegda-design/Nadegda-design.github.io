@@ -3708,6 +3708,7 @@ body.page-generic .about .image.left img {
 /* Текст справа — ограничение ширины */
 body.page-generic .about p {
   max-width: 820px;
+  line-height: 1.45;         /* Интервал между строками */
 }
 
 /* Заголовок */
@@ -3726,6 +3727,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
