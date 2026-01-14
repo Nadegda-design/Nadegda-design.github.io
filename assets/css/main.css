@@ -3864,6 +3864,14 @@ body.page-generic h1 {
   margin-bottom: 2rem;
 }
 
+/* ===== СТРАНИЦА "ОБО МНЕ" — УБИРАЕМ СТОЛБИКИ ===== */
+body.page-generic #main .inner {
+  column-count: 1 !important;
+  columns: auto !important;
+  column-width: auto !important;
+  column-gap: 0 !important;
+}
+
 
 
 
