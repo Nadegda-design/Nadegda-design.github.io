@@ -3793,6 +3793,28 @@ input, select, textarea {
   border-bottom-color: rgba(0,0,0,0.55);
 }
 
+.page-top-nav{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: 0 0 24px 0; /* отступ до h1 */
+}
+
+.page-top-nav .nav-home{
+  margin-right: auto; /* прижимает "Главная" влево */
+  text-decoration: none;
+}
+
+.page-top-nav .nav-links{
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+}
+
+.page-top-nav a{
+  text-decoration: none;
+}
+
 /* Mobile */
 @media screen and (max-width: 736px){
   .page-top-nav{
@@ -3809,6 +3831,7 @@ input, select, textarea {
 .toggle {
   display: none !important;
 }
+
 
 
 
