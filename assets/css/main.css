@@ -3832,6 +3832,40 @@ input, select, textarea {
   display: none !important;
 }
 
+/* ===== About page alignment fix ===== */
+
+/* Весь контент страницы "Обо мне" */
+body.page-generic #main .inner,
+body.page-generic header,
+body.page-generic h1,
+body.page-generic p {
+  text-align: left;
+}
+
+/* Блок с фото + текстом */
+body.page-generic .about {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;
+}
+
+/* Фото слева */
+body.page-generic .about .image {
+  flex: 0 0 320px;
+}
+
+/* Текст справа */
+body.page-generic .about p {
+  max-width: 640px;
+}
+
+/* Заголовок */
+body.page-generic h1 {
+  margin-bottom: 2rem;
+}
+
+
+
 
 
 
