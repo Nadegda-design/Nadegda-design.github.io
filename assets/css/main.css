@@ -3801,6 +3801,16 @@ input, select, textarea {
   }
 }
 
+/* Убираем бургер-меню на всех страницах */
+#menuToggle,
+#menu,
+.menu,
+.hamburger,
+.toggle {
+  display: none !important;
+}
+
+
 
 
 
