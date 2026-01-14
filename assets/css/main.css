@@ -3603,8 +3603,8 @@ input, select, textarea {
   display: flex;
   align-items: center;
   gap: 24px;
-  margin-top: -20px;
-  margin-bottom: 40px;
+  margin-top: -30px;
+  margin-bottom: 34px;
   flex-wrap: wrap;
 }
 
@@ -3730,6 +3730,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
