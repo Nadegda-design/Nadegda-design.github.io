@@ -3767,6 +3767,41 @@ input, select, textarea {
 .gd-prev { left: 32px; }
 .gd-next { right: 24px; }
 
+/* ===== Top menu above H1 ===== */
+.page-top-nav{
+  display: flex;
+  justify-content: center;  /* меню по центру */
+  gap: 48px;                /* расстояние между пунктами */
+  flex-wrap: wrap;          /* чтобы на мобильном переносилось */
+  margin: 0 0 22px 0;       /* отступ снизу до заголовка */
+}
+
+.page-top-nav a{
+  text-decoration: none;
+  border-bottom: 2px solid transparent; /* аккуратное подчёркивание */
+  padding: 6px 0;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: inherit;
+}
+
+.page-top-nav a:hover{
+  border-bottom-color: rgba(0,0,0,0.25);
+}
+
+.page-top-nav a.is-active{
+  border-bottom-color: rgba(0,0,0,0.55);
+}
+
+/* Mobile */
+@media screen and (max-width: 736px){
+  .page-top-nav{
+    gap: 18px;
+    justify-content: flex-start; /* на мобилке можно слева */
+  }
+}
+
+
 
 
 
