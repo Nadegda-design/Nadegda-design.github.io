@@ -3452,11 +3452,13 @@ input, select, textarea {
 
 /* Заголовок */
 .gd-item h3 {
+  font-weight: 700; 
   margin: 0.9rem 0 0.35rem;
   text-align: left;
-  font-size: 0.95rem;
-  letter-spacing: 0.18em;
+  font-size: 1.05rem;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
+  line-height: 1.25;
   color: #444;
 }
 
@@ -3464,8 +3466,8 @@ input, select, textarea {
 .gd-item p {
   margin: 0;
   text-align: left;
-  font-size: 0.85rem;
-  line-height: 1.5;
+  font-size: 1.05rem;
+  line-height: 1.6;
   color: #777;
 }
 
@@ -3728,6 +3730,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
