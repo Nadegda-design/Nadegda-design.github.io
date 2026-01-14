@@ -3695,8 +3695,8 @@ body.page-generic .about {
 /* Фото слева */
 body.page-generic .about .image.left {
   max-width: none;        /* отключаем 40% */
-  width: 480px;           /* <-- размер фото (попробуй 380–480px) */
-  margin-top: 8rem;          /* потом будем двигать */
+  width: 500px;           /* <-- размер фото (попробуй 380–480px) */
+  margin-top: 7rem;          /* потом будем двигать */
 }
 
 body.page-generic .about .image.left img {
@@ -3726,6 +3726,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
