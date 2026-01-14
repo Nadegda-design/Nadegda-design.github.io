@@ -3694,9 +3694,15 @@ body.page-generic .about {
 
 /* Фото слева */
 body.page-generic .about .image.left {
-  flex: 0 0 320px;
-  margin-top: 5.2rem !important;  /* ← МЕНЯЙ ЭТО ЗНАЧЕНИЕ */
-  top: auto;                      /* важно: отключаем старый top: 0.25em */
+  max-width: none;        /* отключаем 40% */
+  width: 420px;           /* <-- размер фото (попробуй 380–480px) */
+  margin-top: 2.5rem;          /* потом будем двигать */
+}
+
+body.page-generic .about .image.left img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* Текст справа — ограничение ширины */
@@ -3720,6 +3726,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
