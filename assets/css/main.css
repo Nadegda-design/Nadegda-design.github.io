@@ -3864,16 +3864,14 @@ body.page-generic h1 {
   margin-bottom: 2rem;
 }
 
-/* ===== СТРАНИЦА "ОБО МНЕ" — УБИРАЕМ СТОЛБИКИ ===== */
-body.page-generic #main .inner {
+/* ===== ОБО МНЕ — ПОЛНОЕ ОТКЛЮЧЕНИЕ КОЛОНОК ===== */
+body.page-generic *,
+body.page-generic *::before,
+body.page-generic *::after {
   column-count: 1 !important;
   columns: auto !important;
   column-width: auto !important;
   column-gap: 0 !important;
-}
-
-body.page-generic {
-  outline: 8px solid red;
 }
 
 
