@@ -3852,7 +3852,7 @@ body.page-generic .about {
 /* Фото слева */
 body.page-generic .about .image {
   flex: 0 0 320px;
-  margin-top: 3.2rem; /* ← регулируй это значение */
+  margin-top: 3.2rem !important;
 }
 
 /* Текст справа */
@@ -3878,6 +3878,7 @@ body.page-generic p {
   column-width: auto !important;
   column-gap: 0 !important;
 }
+
 
 
 
