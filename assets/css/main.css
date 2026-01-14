@@ -3625,7 +3625,7 @@ input, select, textarea {
   text-decoration: none;
   border-bottom: 2px solid transparent;
   padding: 6px 0;
-  font-weight: 500;
+  font-weight: 570;
   letter-spacing: 0.1em;
   color: inherit;
 }
@@ -3727,6 +3727,7 @@ body.page-generic h1 {
     margin-top: 0 !important;
   }
 }
+
 
 
 
