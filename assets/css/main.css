@@ -3677,6 +3677,7 @@ body.page-generic h1 {
     flex: 0 0 auto;
     margin-top: 0 !important;
   }
+}
 
 /* =========================
    TOP NAV (единый стиль)
@@ -3742,6 +3743,7 @@ body.page-generic h1 {
     gap: 18px;
   }
 }
+
 
 
 
