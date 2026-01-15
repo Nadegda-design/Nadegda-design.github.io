@@ -3650,6 +3650,10 @@ body.page-generic .about .image.left img{
   display: block;
 }
 
+body.page-generic .about-text {
+  margin-top: -5rem;
+}
+
 body.page-generic .about p{
   max-width: 820px;
   line-height: 1.45;
@@ -3704,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
