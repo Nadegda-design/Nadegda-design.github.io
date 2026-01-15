@@ -3660,6 +3660,52 @@ body.page-generic .about p{
   body.page-generic .about .image.left{ margin-top: 0 !important; }
 }
 
+/* =========================
+   ПРАВКИ 1–4: меню, заголовки, подзаголовочный текст
+   ========================= */
+
+/* Единые “настройки” (если нужно — меняй только тут) */
+:root{
+  --topnav-gap: 72px;     /* расстояние между меню и заголовком (п.1) */
+  --h1-bottom: 18px;      /* отступ под H1 */
+  --lead-size: 1.15rem;   /* размер текста под H1 (п.4) */
+  --lead-weight: 500;     /* толщина текста под H1 (п.4) */
+}
+
+/* 1) Меню выше и отделено от заголовков */
+#main > .inner > header{
+  margin: 0;
+  padding: 0;
+}
+
+#main > .inner > header > .page-top-nav{
+  margin: 0 0 var(--topnav-gap) 0 !important;
+  padding: 0 !important;
+}
+
+/* 3) Все заголовки (H1) на одном уровне по высоте (как на “Обо мне”) */
+#main > .inner > header h1{
+  margin: 0 0 var(--h1-bottom) 0 !important;
+  line-height: 1.15;
+}
+
+/* 4) Текст сразу под заголовком: чуть больше и жирнее */
+#main > .inner > header p{
+  margin: 0 0 2.2rem 0;
+  font-size: var(--lead-size);
+  font-weight: var(--lead-weight);
+  line-height: 1.45;
+  max-width: 56rem;
+}
+
+/* Не трогаем “Обо мне”: там H1 внутри .about-text, оставляем как тебе нравится */
+body.page-generic #main > .inner > header p{
+  /* на “Обо мне” header содержит только навигацию, на всякий случай */
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+
 
 
 
