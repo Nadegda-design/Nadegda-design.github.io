@@ -3714,8 +3714,8 @@ body.page-generic #main > .inner > header p{
    ========================= */
 
 :root {
-  --header-top-offset: 3rem;
-  --h1-top-offset: 0rem;
+  --header-top-offset: 0rem;
+  --h1-top-offset: 3rem;
   --intro-top-offset: 0rem;
 }
 
@@ -3733,6 +3733,7 @@ body.page-generic #main > .inner > header p{
 #main > .inner > header.page-header .page-intro {
   margin-top: var(--intro-top-offset);
 }
+
 
 
 
