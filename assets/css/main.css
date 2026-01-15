@@ -3672,8 +3672,8 @@ body.page-generic .about p{
 :root{
   --topnav-gap: 72px;     /* расстояние между меню и заголовком (п.1) */
   --h1-bottom: 18px;      /* отступ под H1 */
-  --lead-size: 1.2rem;   /* размер текста под H1 (п.4) */
-  --lead-weight: 500;     /* толщина текста под H1 (п.4) */
+  --lead-size: 1.25rem;   /* размер текста под H1 (п.4) */
+  --lead-weight: 550;     /* толщина текста под H1 (п.4) */
 }
 
 /* 1) Меню выше и отделено от заголовков */
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
