@@ -3527,7 +3527,7 @@ input, select, textarea {
 
 #gdModalCaption {
   margin-top: 0.8rem;
-  font-size: 1.1rem;
+  font-size: 1.6rem;
   line-height: 1.6;
   color: #555;
 }
@@ -3744,6 +3744,7 @@ body.page-generic h1 {
     gap: 18px;
   }
 }
+
 
 
 
