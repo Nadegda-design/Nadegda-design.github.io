@@ -3635,7 +3635,7 @@ input, select, textarea {
 body.page-generic .about{
   display: flex;
   align-items: flex-start;
-  gap: 6rem;
+  gap: 4rem;
 }
 
 body.page-generic .about .image.left{
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
