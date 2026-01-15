@@ -3670,7 +3670,7 @@ body.page-generic .about p{
 
 /* Единые “настройки” (если нужно — меняй только тут) */
 :root{
-  --topnav-gap: 90px;     /* расстояние между меню и заголовком (п.1) */
+  --topnav-gap: 100px;     /* расстояние между меню и заголовком (п.1) */
   --h1-bottom: 18px;      /* отступ под H1 */
   --lead-size: 1.3rem;   /* размер текста под H1 (п.4) */
   --lead-weight: 580;     /* толщина текста под H1 (п.4) */
@@ -3699,7 +3699,7 @@ body.page-generic .about p{
   font-size: var(--lead-size);
   font-weight: var(--lead-weight);
   line-height: 1.45;
-  max-width: 56rem;
+  max-width: 68rem;
 }
 
 /* Не трогаем “Обо мне”: там H1 внутри .about-text, оставляем как тебе нравится */
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
