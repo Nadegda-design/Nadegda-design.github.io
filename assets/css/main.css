@@ -3640,8 +3640,8 @@ body.page-generic .about{
 
 body.page-generic .about .image.left{
   max-width: none;
-  width: 600px;
-  margin-top: 10rem;
+  width: 580px;
+  margin-top: 9.5rem;
 }
 
 body.page-generic .about .image.left img{
@@ -3672,8 +3672,8 @@ body.page-generic .about p{
 :root{
   --topnav-gap: 72px;     /* расстояние между меню и заголовком (п.1) */
   --h1-bottom: 18px;      /* отступ под H1 */
-  --lead-size: 1.15rem;   /* размер текста под H1 (п.4) */
-  --lead-weight: 500;     /* толщина текста под H1 (п.4) */
+  --lead-size: 1.5rem;   /* размер текста под H1 (п.4) */
+  --lead-weight: 600;     /* толщина текста под H1 (п.4) */
 }
 
 /* 1) Меню выше и отделено от заголовков */
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
