@@ -3709,31 +3709,6 @@ body.page-generic #main > .inner > header p{
   font-weight: inherit;
 }
 
-/* =========================
-   Управление высотой текстовых блоков
-   ========================= */
-
-:root {
-  --header-top-offset: 0rem;
-  --h1-top-offset: 3rem;
-  --intro-top-offset: 0rem;
-}
-
-/* Весь текстовый блок страницы */
-#main > .inner > header.page-header {
-  margin-top: var(--header-top-offset);
-}
-
-/* Заголовок */
-#main > .inner > header.page-header h1 {
-  margin-top: var(--h1-top-offset);
-}
-
-/* Текст под заголовком */
-#main > .inner > header.page-header .page-intro {
-  margin-top: var(--intro-top-offset);
-}
-
 
 
 
