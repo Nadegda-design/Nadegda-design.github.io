@@ -3651,7 +3651,7 @@ body.page-generic .about .image.left img{
 }
 
 body.page-generic .about-text {
-  margin-top: -5rem;
+  margin-top: -2rem;
 }
 
 body.page-generic .about p{
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
