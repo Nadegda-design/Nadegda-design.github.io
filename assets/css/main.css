@@ -3597,54 +3597,6 @@ input, select, textarea {
 .gd-next { right: 24px; }
 
 /* =========================
-   Верхнее меню над H1
-   ========================= */
-
-.page-top-nav {
-  display: flex;
-  align-items: center;
-  gap: 24px;
-  margin-top: 16px;
-  margin-bottom: 60px;
-  flex-wrap: wrap;
-}
-
-.page-top-nav .nav-home{
-  margin-right: auto; /* только чтобы прижать "Главная" влево */
-}
-
-.page-top-nav .nav-links {
-  display: flex;
-  gap: 32px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.page-top-nav a {
-  text-decoration: none;
-  border-bottom: 2px solid transparent;
-  padding: 6px 0;
-  font-weight: 490;
-  letter-spacing: 0.02em;
-  color: inherit;
-}
-
-.page-top-nav a:hover {
-  border-bottom-color: rgba(0,0,0,0.25);
-}
-
-.page-top-nav a.is-active {
-  border-bottom-color: rgba(0,0,0,0.55);
-}
-
-@media screen and (max-width: 736px) {
-  .page-top-nav {
-    gap: 18px;
-    justify-content: flex-start;
-  }
-}
-
-/* =========================
    Убираем бургер-меню (твой старый #menu)
    ========================= */
 
@@ -3725,7 +3677,72 @@ body.page-generic h1 {
     flex: 0 0 auto;
     margin-top: 0 !important;
   }
+
+/* =========================
+   TOP NAV (единый стиль)
+   ========================= */
+
+/* Контейнер меню */
+#main > .inner > header > .page-top-nav{
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  /* это и есть расстояние между меню и заголовком */
+  margin: 0 0 60px 0;
 }
+
+/* "Главная" слева */
+#main > .inner > header > .page-top-nav .nav-home{
+  margin-right: auto;
+}
+
+/* Группа ссылок справа */
+#main > .inner > header > .page-top-nav .nav-links{
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ОДИН стиль для ВСЕХ ссылок (включая "Главная") */
+#main > .inner > header > .page-top-nav a{
+  text-decoration: none !important;
+  background: transparent !important;
+  border: 0 !important;
+
+  padding: 6px 0 !important;
+
+  font-weight: 500 !important;      /* тоньше */
+  letter-spacing: 0.02em !important;
+  color: inherit !important;
+
+  /* делаем “подчёркивание” через border-bottom */
+  border-bottom: 2px solid transparent !important;
+}
+
+/* hover */
+#main > .inner > header > .page-top-nav a:hover{
+  border-bottom-color: rgba(0,0,0,0.25) !important;
+}
+
+/* активная страница */
+#main > .inner > header > .page-top-nav a.is-active{
+  border-bottom-color: rgba(0,0,0,0.55) !important;
+}
+
+/* Mobile */
+@media screen and (max-width: 736px){
+  #main > .inner > header > .page-top-nav{
+    margin-bottom: 36px;
+    gap: 18px;
+  }
+  #main > .inner > header > .page-top-nav .nav-links{
+    gap: 18px;
+  }
+}
+
 
 
 
