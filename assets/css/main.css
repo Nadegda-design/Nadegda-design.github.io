@@ -3635,12 +3635,12 @@ input, select, textarea {
 body.page-generic .about{
   display: flex;
   align-items: flex-start;
-  gap: 4rem;
+  gap: 3rem;
 }
 
 body.page-generic .about .image.left{
   max-width: none;
-  width: 560px;
+  width: 500px;
   margin-top: 9.5rem;
 }
 
@@ -3708,6 +3708,7 @@ body.page-generic #main > .inner > header p{
   font-size: inherit;
   font-weight: inherit;
 }
+
 
 
 
